@@ -4,20 +4,28 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      newBook: "",
+    };
   },
 
   mounted() {},
 
   computed: {},
-  
-  methods: {},
+
+  methods: {
+    addNewBook() {
+      this.$emit("add-new-book", this.newBook);
+      this.newBook = ""
+    },
+  },
 };
 </script>
 
 <template>
   <div class="w-100">
-      STORE BOOKS
+    <input placeholder="type book name" v-model="newBook" />
+    <button @click="addNewBook">ADD BOOK</button>
   </div>
 </template>
 
