@@ -5,9 +5,6 @@ import StoreBook from "../views/Store.vue"
 import ViewBook from "../views/View.vue"
 import UpdateBook from "../views/Update.vue"
 
-
-
-
 Vue.use(VueRouter)
 
 const routes = [

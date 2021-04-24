@@ -2,23 +2,30 @@
 <script>
 export default {
   components: {},
-  props: {},
+  props: ['books'],
   data() {
-    return {};
+    return { };
   },
 
   mounted() {},
 
   computed: {},
-  
-  methods: {},
+
+  methods: {
+    fetchBook() {
+      let id = this.$route.params.id;
+      return this.books.find(function (book) {
+        if (book.id == id) {
+          return book;
+        }
+      });
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="w-100">
-      VIEW BOOK
-  </div>
+  <div class="w-100">VIEW BOOK {{ fetchBook().name }}</div>
 </template>
 
 
